@@ -3,22 +3,239 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>kas328</title>
+<title>강승기 | Unity 클라이언트 개발자</title>
+<meta name="description" content="20명 규모 팀에서 메타버스 플랫폼 Mingle을 iOS · Android로 출시한 Unity 클라이언트 개발자 강승기의 포트폴리오입니다.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kas328.com/">
+<meta property="og:title" content="강승기 | Unity 클라이언트 개발자">
+<meta property="og:description" content="Mingle · BeatBreaker · Tichu — 프로젝트 영상과 플레이 가능한 빌드">
+<!-- og:image: assets/og.png (1200×630) 를 만들면 아래 주석을 해제하세요 -->
+<!-- <meta property="og:image" content="https://kas328.com/assets/og.png"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
 <style>
-  :root { --bg:#f7f7f5; --ink:#1d2330; --sub:#6b7280; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#14161b; --ink:#e8eaee; --sub:#9aa1ad; } }
-  html,body { height:100%; margin:0; }
-  body { display:grid; place-items:center; background:var(--bg); color:var(--ink);
-         font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif; padding:0 16px; }
-  h1 { margin:0 0 8px; font-size:28px; letter-spacing:.02em; }
-  p { margin:0; color:var(--sub); }
-  main { text-align:center; }
+:root{
+  --bg:#0E1116; --surface:#161B22; --surface-2:#1C222B; --line:#2A313C;
+  --text:#E6EAF0; --text-2:#C9D1DB; --muted:#9AA4B2; --accent:#4FD1C5; --accent-hover:#81E6D9;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Noto Sans KR',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}a:hover{color:var(--accent-hover)}
+img,video,iframe{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.label{font-family:var(--mono);font-size:14px;color:var(--accent)}
+.muted{color:var(--muted)}
+section{padding:64px 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:28px}
+.grid{display:grid;gap:20px}
+.g200{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.g280{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.g420{grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:center}
+.g480{grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px}
+.card h3{margin:0 0 12px;font-size:20px}
+.card p{margin:0;font-size:16px;line-height:1.7;color:var(--text-2)}
+.stat{font-family:var(--mono);font-size:clamp(28px,5vw,36px);font-weight:600}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;border-radius:10px;font-weight:700;text-decoration:none}
+.btn-primary{background:var(--accent);color:var(--bg)}.btn-primary:hover{background:var(--accent-hover);color:var(--bg)}
+.btn-ghost{border:1px solid var(--line);color:var(--text);font-weight:500}.btn-ghost:hover{border-color:var(--muted);color:var(--text)}
+.project{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.project .body{padding:24px;display:flex;flex-direction:column;gap:12px}
+.project h3{margin:0;font-size:20px}
+.project p{margin:0;font-size:15px;line-height:1.7;color:var(--text-2)}
+.media{aspect-ratio:16/9;background:var(--surface-2);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;text-align:center;padding:12px}
+.media img{width:100%;height:100%;object-fit:cover}
+.media.contain{position:relative;padding:0}
+.media.contain img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:16px}
+.media.fit{aspect-ratio:auto;padding:0}
+.media.fit img{height:auto}
+.project .media{border-bottom:1px solid var(--line)}
+.media-box{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.metric{font-family:var(--mono);font-size:14px;color:var(--accent);background:var(--bg);border-radius:8px;padding:12px 14px;line-height:1.6}
+ul.list{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.7;color:var(--text-2)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 24px}
+summary{cursor:pointer;font-size:16px;font-weight:700;min-height:28px}
+details ul.list{margin-top:16px}
+details strong{color:var(--text)}
+.note{margin:0;font-size:15px;line-height:1.7;background:#1C2A2A;border-radius:10px;padding:14px 16px}
+.rows{display:flex;flex-direction:column;gap:14px;font-size:15px;line-height:1.6}
+h2{margin:0;font-size:clamp(34px,6vw,44px);font-weight:900}
+.nav a{color:var(--text-2);text-decoration:none}.nav a:hover{color:var(--accent)}
+.yt{position:relative;aspect-ratio:16/9;width:100%}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 </style>
 </head>
 <body>
+<div class="wrap">
+
+<header style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding:28px 0;border-bottom:1px solid var(--line)">
+  <span style="font-family:var(--mono);font-size:15px" class="muted">kas328.com</span>
+  <nav class="nav" style="display:flex;gap:24px;flex-wrap:wrap;font-size:15px" aria-label="섹션 이동">
+    <a href="#mingle">Mingle</a>
+    <a href="#beatbreaker">BeatBreaker</a>
+    <a href="#tichu">Tichu</a>
+    <a href="#contact">연락처</a>
+  </nav>
+</header>
+
 <main>
-  <h1>kas328</h1>
-  <p>포트폴리오 준비 중입니다.</p>
+<div style="padding:112px 0 96px;display:flex;flex-direction:column;gap:28px">
+  <span class="label">// Unity 클라이언트 개발자</span>
+  <h1 style="margin:0;font-size:clamp(48px,10vw,72px);line-height:1.05;font-weight:900;letter-spacing:-0.02em">강승기</h1>
+  <p style="margin:0;font-size:clamp(18px,3vw,24px);line-height:1.6;color:var(--text-2);max-width:760px">20명 규모 팀에서 메타버스 플랫폼 Mingle을 iOS · Android로 출시한 Unity 클라이언트 개발자입니다.</p>
+  <div class="grid g200" style="gap:16px;margin-top:16px">
+    <div class="card" style="padding:24px"><div class="stat">1년</div><div class="muted" style="font-size:14px;margin-top:6px">Unity 클라이언트 실무</div></div>
+    <div class="card" style="padding:24px"><div class="stat">20명</div><div class="muted" style="font-size:14px;margin-top:6px">프로젝트 팀 규모</div></div>
+    <div class="card" style="padding:24px"><div class="stat">iOS / Android</div><div class="muted" style="font-size:14px;margin-top:6px">출시 플랫폼</div></div>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+    <a class="btn btn-primary" href="https://github.com/kas328">GitHub</a>
+    <a class="btn btn-ghost" href="mailto:kas328@naver.com">이메일 보내기</a>
+  </div>
+</div>
+
+<section aria-labelledby="h-strengths">
+  <span class="label" id="h-strengths">01 / 강점</span>
+  <div class="grid g280">
+    <div class="card"><h3>출시까지 책임진 경험</h3><p>iOS 앱의 Android 포팅을 1인 담당해 크래시 디버깅부터 멀티 해상도 대응까지 처리하고 출시를 마쳤습니다.</p></div>
+    <div class="card"><h3>측정으로 문제를 잡는 방식</h3><p>썸네일 텍스처가 해제되지 않아 생기던 메모리 누적 크래시를 Unity Profiler로 특정하고, 실기기 계측으로 해결을 검증했습니다.</p></div>
+    <div class="card"><h3>비개발 직군과의 협업</h3><p>아티스트가 Unity 안에서 직접 이모티콘을 조합 · 편집하는 에디터 툴을 만들고, 피드백을 받아 UI를 개선했습니다.</p></div>
+  </div>
+</section>
+
+<section id="mingle" aria-labelledby="h-mingle">
+  <span class="label">02 / 실무 프로젝트</span>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <h2 id="h-mingle">Mingle</h2>
+    <p class="muted" style="margin:0;font-size:16px;line-height:1.7">주식회사 카이 · 2024.09 – 2025.09 · Unity 클라이언트 개발 (1년) · 메타버스 방송 플랫폼 · 팀 20명 · 인도네시아 App Store · Google Play 출시</p>
+  </div>
+  <div class="grid g480">
+
+    <article class="project">
+      <div class="media fit" style="background:#fff"><img src="assets/mingle-memory.jpg" width="2032" height="508" loading="lazy" alt="Xcode 메모리 측정: 광장 진입 1.53GB, 소집 패널 활성화 1.8GB, 패널 비활성화 후 1.54GB"></div>
+      <div class="body">
+        <h3>썸네일 메모리 누적 크래시 해결</h3>
+        <p>소집 패널을 반복해서 열면 썸네일 텍스처가 해제되지 않아 메모리가 쌓이고 앱이 크래시했습니다. Unity Profiler로 누적 지점을 특정하고, 패널 종료 시 캐싱된 텍스처를 명시적으로 Destroy했습니다.</p>
+        <div class="metric">1.53GB → 1.8GB → 1.54GB<br><span class="muted">iPhone 16 Pro · Xcode · 광장 진입 → 패널 활성화 → 종료 후</span></div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="media contain"><img src="assets/mingle-porting.jpg" width="586" height="1271" loading="lazy" alt="Android 기기에서 받은 Mingle 친구 소집 푸시 알림"></div>
+      <div class="body">
+        <h3>iOS → Android 1인 포팅</h3>
+        <p>Android Logcat으로 크래시를 분석하고, AndroidPostbuild 코드를 분석해 빌드 이슈를 해결했습니다. Manifest로 메모리 용량을 조정하고, 권한 설정 변환과 멀티 해상도 UI까지 맡아 Android 빌드 출시를 마쳤습니다.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="media contain"><img src="assets/mingle-dance.jpg" width="946" height="2048" loading="lazy" alt="Mingle 광장에서 아바타들이 함께 노는 플레이 화면"></div>
+      <div class="body">
+        <h3>멀티플레이 댄스 동기화</h3>
+        <p>Photon PUN RPC 기반으로 플레이어 간 애니메이터를 동기화하고, 근거리 플레이어를 감지하는 거리 계산 로직을 구현해 실시간 상호작용 기능을 제공했습니다.</p>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="media fit" style="background:#F7F7F7"><img src="assets/mingle-login-ui.jpg" width="994" height="714" loading="lazy" alt="UIView를 PageView와 PopupView가 상속하는 계층 다이어그램"></div>
+      <div class="body">
+        <h3>로그인 UI 아키텍처</h3>
+        <p>UIView / PageView / PopupView 계층을 설계하고 UniTask로 페이지를 비동기 전환했습니다. ExecuteWithLoading으로 버튼별 로딩 상태를 관리해 중복 요청을 막고, 예외 상황에서도 UI 상태를 일관되게 유지했습니다.</p>
+      </div>
+    </article>
+
+  </div>
+  <details>
+    <summary>시스템 6개 더보기</summary>
+    <ul class="list">
+      <li><strong>환경설정 시스템</strong> — SettingsManager가 변경 이벤트를 발행하고 UI가 구독하는 구조로, 신규 항목 추가 시 수정 지점을 2곳으로 제한</li>
+      <li><strong>실시간 알림 · 친구 소집</strong> — Firebase FCM 푸시, PubNub 실시간 메시지, 알림 수신 시 친구 위치로 순간이동</li>
+      <li><strong>AI 아바타 카메라</strong> — WebCamTexture 촬영 · 프리뷰, iOS / Android 권한 처리, 서버 제공 URL로 이미지 업로드</li>
+      <li><strong>Addressable 아바타 파츠 관리</strong> — 필요한 아바타 요소만 선택적으로 불러오도록 구현</li>
+      <li><strong>이모티콘 합성 에디터 툴</strong> — 커스텀 에디터 윈도우, 드래그 앤 드롭, 실시간 미리보기, ScriptableObject 저장</li>
+      <li><strong>해외 출시 로컬라이제이션 지원</strong></li>
+    </ul>
+  </details>
+</section>
+
+<section id="beatbreaker" aria-labelledby="h-bb">
+  <div class="grid g420">
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span class="label">03 / 팀 프로젝트</span>
+      <h2 id="h-bb">BeatBreaker</h2>
+      <p class="muted" style="margin:0;font-size:16px">VR 리듬게임 · 2인 팀 · 약 1개월 · Unity 클라이언트 개발</p>
+      <ul class="list">
+        <li>음악 비트에 맞춘 노트 생성 시스템</li>
+        <li>NoteMaker Scene: 노트 종류와 타이밍을 CSV로 저장하고 파싱해 출력</li>
+        <li>오브젝트 풀링으로 메모리 최적화</li>
+        <li>Fever 모드 구현</li>
+      </ul>
+    </div>
+    <div class="media-box">
+      <div class="yt"><iframe src="https://www.youtube-nocookie.com/embed/LqqlC6m677E" title="BeatBreaker 플레이 영상" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+  </div>
+</section>
+
+<section id="tichu" aria-labelledby="h-tichu">
+  <div class="grid g420">
+    <div class="media-box">
+      <div class="media fit"><img src="assets/tichu.jpg" width="2048" height="945" loading="lazy" alt="Tichu 4인 카드게임 플레이 화면"></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <span class="label">04 / 개인 프로젝트</span>
+      <h2 id="h-tichu">Tichu</h2>
+      <p class="muted" style="margin:0;font-size:16px">4인 멀티플레이 카드게임 (AI 대전 포함) · 1인 · 2026.06 – 진행 중</p>
+      <p class="note">구현은 AI 에이전트와 협업해 진행했고, 저는 개발 방향 결정과 플레이테스트 QA를 맡았습니다.</p>
+      <ul class="list">
+        <li>게임 규칙을 Unity와 분리한 순수 C# 코어, 엔진 없이 도는 자동화 테스트로 규칙 검증</li>
+        <li>AI 대전: 상대 손패를 여러 경우로 가정해 시뮬레이션하는 탐색(PIMC), 난이도별 가정 수 16 → 24</li>
+        <li>반복 플레이테스트로 AI 상대의 약점과 버그를 찾고 수정 방향 도출</li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-ghost" href="https://github.com/kas328/Tichu">GitHub 저장소</a>
+        <!-- WebGL 빌드를 /play/tichu/ 에 올리면 동작합니다 -->
+        <a class="btn btn-primary" href="play/tichu/">브라우저에서 플레이</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-label="기술 스택과 경력">
+  <div class="grid g420" style="align-items:start">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span class="label">05 / 기술 스택</span>
+      <div class="rows">
+        <div><span class="muted">엔진 · 언어</span><br>Unity 2021.3+, C#</div>
+        <div><span class="muted">비동기 · 연출</span><br>UniTask, DOTween</div>
+        <div><span class="muted">네트워크 · 백엔드</span><br>Photon PUN, Firebase FCM, PubNub, Go (서버 API 일부 작성), MySQL, Postman</div>
+        <div><span class="muted">툴 · 데이터</span><br>Unity Editor Extensions, ScriptableObject</div>
+        <div><span class="muted">디버깅 · 측정</span><br>Unity Profiler, Xcode, Android Logcat</div>
+        <div><span class="muted">협업</span><br>Git, GitHub, GitLab</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span class="label">06 / 경력 · 학력 · 수상</span>
+      <div class="rows">
+        <div><span class="muted" style="font-family:var(--mono)">2024.09 – 2025.09</span><br>주식회사 카이 · Unity 클라이언트 개발 (1년)</div>
+        <div><span class="muted" style="font-family:var(--mono)">2017.03 – 2026.12</span><br>광운대학교 정보과학교육원 게임프로그래밍학과 · 졸업 예정 (이수 완료)</div>
+        <div><span class="muted" style="font-family:var(--mono)">2021</span><br>XR 그랜드 챌린지 · 본선 최종 Top8</div>
+        <div><span class="muted" style="font-family:var(--mono)">2020.08 – 2021.02</span><br>ML-Agent 과정 · 한국전파진흥협회 (RAPA)</div>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
+
+<footer id="contact" style="padding:80px 0 96px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:16px">
+  <span class="label">07 / 연락처</span>
+  <a href="mailto:kas328@naver.com" style="font-size:clamp(24px,6vw,36px);font-weight:700;color:var(--text);text-decoration:none;word-break:break-all">kas328@naver.com</a>
+  <a href="https://github.com/kas328" style="font-size:18px">github.com/kas328</a>
+</footer>
+
+</div>
 </body>
 </html>
