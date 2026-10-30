@@ -53,6 +53,7 @@ section{padding:64px 0;border-top:1px solid var(--line);display:flex;flex-direct
 .media.fit img{height:auto}
 .project .media{border-bottom:1px solid var(--line)}
 .media-box{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.code-link{align-self:flex-start;font-size:14px;font-weight:700;text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 .metric{font-family:var(--mono);font-size:14px;color:var(--accent);background:var(--bg);border-radius:8px;padding:12px 14px;line-height:1.6}
 ul.list{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:15px;line-height:1.7;color:var(--text-2)}
 details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 24px}
@@ -121,6 +122,7 @@ h2{margin:0;font-size:clamp(34px,6vw,44px);font-weight:900}
         <h3>썸네일 메모리 누적 크래시 해결</h3>
         <p>소집 패널을 반복해서 열면 썸네일 텍스처가 해제되지 않아 메모리가 쌓이고 앱이 크래시했습니다. Unity Profiler로 누적 지점을 특정하고, 패널 종료 시 캐싱된 텍스처를 명시적으로 Destroy했습니다.</p>
         <div class="metric">1.53GB → 1.8GB → 1.54GB<br><span class="muted">iPhone 16 Pro · Xcode · 광장 진입 → 패널 활성화 → 종료 후</span></div>
+        <a class="code-link" href="https://github.com/kas328/unity-muster-notification-system">코드 보기 →</a>
       </div>
     </article>
 
@@ -137,6 +139,7 @@ h2{margin:0;font-size:clamp(34px,6vw,44px);font-weight:900}
       <div class="body">
         <h3>멀티플레이 댄스 동기화</h3>
         <p>Photon PUN RPC 기반으로 플레이어 간 애니메이터를 동기화하고, 근거리 플레이어를 감지하는 거리 계산 로직을 구현해 실시간 상호작용 기능을 제공했습니다.</p>
+        <a class="code-link" href="https://github.com/kas328/unity-multiplayer-dance-system">코드 보기 →</a>
       </div>
     </article>
 
@@ -145,6 +148,7 @@ h2{margin:0;font-size:clamp(34px,6vw,44px);font-weight:900}
       <div class="body">
         <h3>로그인 UI 아키텍처</h3>
         <p>UIView / PageView / PopupView 계층을 설계하고 UniTask로 페이지를 비동기 전환했습니다. ExecuteWithLoading으로 버튼별 로딩 상태를 관리해 중복 요청을 막고, 예외 상황에서도 UI 상태를 일관되게 유지했습니다.</p>
+        <a class="code-link" href="https://github.com/kas328/unity-login-ui-manager">코드 보기 →</a>
       </div>
     </article>
 
@@ -152,11 +156,11 @@ h2{margin:0;font-size:clamp(34px,6vw,44px);font-weight:900}
   <details>
     <summary>시스템 6개 더보기</summary>
     <ul class="list">
-      <li><strong>환경설정 시스템</strong> — SettingsManager가 변경 이벤트를 발행하고 UI가 구독하는 구조로, 신규 항목 추가 시 수정 지점을 2곳으로 제한</li>
+      <li><strong>환경설정 시스템</strong> — SettingsManager가 변경 이벤트를 발행하고 UI가 구독하는 구조로, 신규 항목 추가 시 수정 지점을 2곳으로 제한 · <a href="https://github.com/kas328/unity-advanced-settings-system">코드</a></li>
       <li><strong>실시간 알림 · 친구 소집</strong> — Firebase FCM 푸시, PubNub 실시간 메시지, 알림 수신 시 친구 위치로 순간이동</li>
       <li><strong>AI 아바타 카메라</strong> — WebCamTexture 실시간 촬영 · 프리뷰, iOS / Android 카메라 권한 처리</li>
       <li><strong>Addressable 아바타 파츠 관리</strong> — 필요한 아바타 요소만 선택적으로 불러오도록 구현</li>
-      <li><strong>이모티콘 합성 에디터 툴</strong> — 커스텀 에디터 윈도우, 드래그 앤 드롭, 실시간 미리보기, ScriptableObject 저장</li>
+      <li><strong>이모티콘 합성 에디터 툴</strong> — 커스텀 에디터 윈도우, 드래그 앤 드롭, 실시간 미리보기, ScriptableObject 저장 · <a href="https://github.com/kas328/unity-synthesis-emoticon-system">코드</a></li>
       <li><strong>해외 출시 로컬라이제이션 지원</strong></li>
     </ul>
   </details>
